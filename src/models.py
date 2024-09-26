@@ -29,6 +29,7 @@ class Post(Base):
     user_id = Column(Integer, ForeignKey('user.id'))  
     user = relationship(User)
     type = Column(String(250), nullable=False) 
+    created_at = Column(String(250), nullable=False) 
 
 class Comment(Base):  
     __tablename__ = 'comment'
@@ -38,6 +39,8 @@ class Comment(Base):
     post_id = Column(Integer, ForeignKey('post.id'))
     user = relationship(User)
     post = relationship(Post)
+    created_at = Column(String(250), nullable=False) 
+
 
 def to_dict(self):
     return {}
